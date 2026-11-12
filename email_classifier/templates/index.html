@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Spam Classifier</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <header>
+      <i class="fa-solid fa-square-check head"></i>
+      <h1>SpamGuard AI</h1>
+      <p id="subheading">Intelligent SMS Detection</p>
+      <p id="sub">ML Powered</p>
+    </header>
+
+    <main>
+      <h1>Detect Spam. Stay Safe.</h1>
+
+      <p>Analyze your messages using machine learning algorithms.</p>
+
+      <form action="/predict" method="POST">
+        <h3>Enter Your Message</h3>
+
+        <textarea
+          name="message"
+          placeholder="Congratulations! You have won a free pizza prize. Click here now!"
+          rows="5"
+          required
+        ></textarea>
+
+        <h3>Select Machine Learning Algorithm</h3>
+
+        <select name="model" required>
+          <option value="">Choose Algorithm</option>
+          <option value="naive_bayes">Naive Bayes</option>
+          <option value="random_forest">Random Forest</option>
+          <option value="logistic_regression">Logistic Regression</option>
+        </select>
+
+        <h3>Select Vectorization</h3>
+
+        <select name="vectorizer" required>
+          <option value="">Choose Vectorizer</option>
+          <option value="bow">Bag of Words</option>
+          <option value="tfidf">TF-IDF</option>
+        </select>
+
+        <button type="submit">Analyze Message</button>
+      </form>
+    </main>
+
+    
+<section class="result-section" id="resultSection" style="display: none;">
+
+    <h2>Analysis Result</h2>
+
+    <div class="result-box">
+
+        <h3 id="predictionStatus">Spam / Ham</h3>
+
+        <p>Selected Model: <span id="resultModel"></span></p>
+
+        <p>Selected Vectorizer: <span id="resultVectorizer"></span></p>
+
+        <p>Message: <span id="resultMessage"></span></p>
+
+    </div>
+
+</section>
+
+
+    <footer>
+      <h3>SpamGuard AI</h3>
+      <p>Smart SMS Spam Detection using Machine Learning.</p>
+      <p>Built with Python, Flask & Machine Learning.</p>
+      <p>&copy; 2026 SpamGuard AI. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../static/script.js"></script>
+  </body>
+</html>
