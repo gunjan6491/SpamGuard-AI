@@ -1,0 +1,8 @@
+Flask
+pandas
+numpy
+scikit-learn
+joblib
+beautifulsoup4
+emoji
+gunicorn
